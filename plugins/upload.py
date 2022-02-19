@@ -11,7 +11,7 @@ from helpers.uploader import Uploader
 from config import Config
 
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['upload']) & Filters.user(Config.AUTH_USERS))
+@Client.on_message(Filters.private & Filters.incoming & Filters.command(['upload']) #& Filters.user(Config.AUTH_USERS))
 async def _upload(c, m):
     if(not os.path.isfile(Config.CRED_FILE)):
         await m.reply_text(text = tr.NOT_AUTHENTICATED_MSG)
