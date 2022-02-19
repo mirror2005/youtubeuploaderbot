@@ -5,7 +5,7 @@ from translations import Messages as tr
 from config import Config
 
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['start']) & Filters.user(Config.AUTH_USERS))
+@Client.on_message(Filters.private & Filters.incoming & Filters.command(['start']) #& Filters.user(Config.AUTH_USERS))
 async def _start(c, m):
 
     await c.send_chat_action(chat_id = m.chat.id,
